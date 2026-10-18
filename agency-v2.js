@@ -17,17 +17,8 @@
   nav.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
   matchMedia('(min-width:761px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
-  const heroFilm = $('#hero-film');
-  const motionButton = $('#motion-toggle');
-  const motion = matchMedia('(prefers-reduced-motion:reduce)');
-  const updateMotion = () => { const paused = heroFilm.paused; motionButton.setAttribute('aria-label', paused ? 'Reproduzir animação de abertura' : 'Pausar animação de abertura'); motionButton.innerHTML = paused ? '<span aria-hidden="true">▶</span>' : '<svg aria-hidden="true"><use href="#pause"/></svg>'; };
-  if (motion.matches || navigator.connection?.saveData) { heroFilm.autoplay = false; heroFilm.pause(); }
-  heroFilm.addEventListener('play', updateMotion); heroFilm.addEventListener('pause', updateMotion); updateMotion();
-  motionButton.addEventListener('click', () => { if (heroFilm.paused) heroFilm.play().catch(() => { motionButton.setAttribute('aria-label', 'Reproduzir animação de abertura'); }); else heroFilm.pause(); });
-  motion.addEventListener('change', event => { if (event.matches) heroFilm.pause(); });
   const films = $$('.film-screen video');
-  films.forEach(video => video.addEventListener('play', () => films.forEach(other => { if (other !== video) other.pause(); })));
-  document.addEventListener('visibilitychange', () => { if (document.hidden) { heroFilm.pause(); films.forEach(video => video.pause()); } });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) films.forEach(video => video.pause()); });
   let ticking = false;
   const progress = () => { const max = document.documentElement.scrollHeight - innerHeight; document.documentElement.style.setProperty('--reading', `${max > 0 ? Math.min(100, scrollY / max * 100) : 0}%`); ticking = false; };
   addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(progress); ticking = true; } }, { passive: true }); progress();
