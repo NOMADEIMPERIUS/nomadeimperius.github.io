@@ -1,0 +1,50 @@
+/* Visible edge lighting. Existing typography, images and component colors stay intact. */
+.hero,.essence,.studies,.direction,.site-footer,.solutions,.process,.contact,.faq{position:relative;isolation:isolate;overflow:hidden}
+.hero{background-color:#090a0b;background-image:radial-gradient(ellipse 640px 530px at 100% 18%,rgba(210,165,83,.36),rgba(210,165,83,.12) 42%,transparent 77%),radial-gradient(ellipse 500px 440px at 0% 82%,rgba(210,165,83,.22),transparent 76%)}
+.essence{background-image:radial-gradient(ellipse 650px 490px at 0% 25%,rgba(210,165,83,.29),rgba(210,165,83,.08) 48%,transparent 78%)}
+.studies{background-image:radial-gradient(ellipse 690px 620px at 100% 16%,rgba(210,165,83,.32),rgba(210,165,83,.09) 45%,transparent 78%),radial-gradient(ellipse 530px 450px at 0% 89%,rgba(210,165,83,.21),transparent 77%)}
+.direction{background-image:radial-gradient(ellipse 620px 500px at 0% 45%,rgba(210,165,83,.3),rgba(210,165,83,.08) 48%,transparent 78%)}
+.site-footer{background-image:radial-gradient(ellipse 680px 340px at 85% 100%,rgba(210,165,83,.25),transparent 78%)}
+.essence::before,.studies::before,.direction::before,.solutions::before,.process::before,.contact::before,.faq::before{content:'';position:absolute;z-index:0;pointer-events:none;width:540px;height:540px;right:-310px;top:8%;border-radius:50%;background:radial-gradient(circle,rgba(235,184,88,.22),rgba(210,165,83,.08) 42%,transparent 70%);filter:blur(24px)}
+.essence::before{left:-290px;right:auto;top:20%}
+.direction::before{left:-300px;right:auto;top:18%}
+.hero-container,.hero-baseline,.essence>.shell,.studies>.shell,.direction>.shell,.site-footer>.shell,.dark-section>.shell{position:relative;z-index:1}
+.hero-brand{position:relative;isolation:isolate}
+.hero-brand-frame{box-shadow:0 0 55px 12px rgba(210,165,83,.25),0 0 130px 30px rgba(210,165,83,.14)}
+@media(max-width:640px){
+ .hero{background-image:radial-gradient(ellipse 410px 480px at 100% 10%,rgba(210,165,83,.34),rgba(210,165,83,.1) 45%,transparent 78%),radial-gradient(ellipse 340px 400px at 0% 75%,rgba(210,165,83,.22),transparent 78%)}
+ .essence{background-image:radial-gradient(ellipse 400px 440px at 0% 35%,rgba(210,165,83,.28),transparent 78%)}
+ .studies{background-image:radial-gradient(ellipse 440px 620px at 100% 18%,rgba(210,165,83,.32),rgba(210,165,83,.08) 47%,transparent 79%),radial-gradient(ellipse 360px 430px at 0% 84%,rgba(210,165,83,.19),transparent 78%)}
+ .direction{background-image:radial-gradient(ellipse 410px 490px at 0% 35%,rgba(210,165,83,.29),transparent 79%)}
+ .essence::before,.studies::before,.direction::before,.solutions::before,.process::before,.contact::before,.faq::before{width:380px;height:450px;right:-225px;filter:blur(20px)}
+ .essence::before,.direction::before{right:auto;left:-225px}
+ .hero-brand-frame{box-shadow:0 0 35px 9px rgba(210,165,83,.31),0 0 85px 20px rgba(210,165,83,.16)}
+}
+
+/* Fine diagonal light streaks, inspired by the profile artwork. */
+.hero::before,.hero::after,.essence::after,.studies::after,.direction::after,.site-footer::after,.solutions::after,.process::after,.contact::after,.faq::after{content:'';position:absolute;z-index:0;pointer-events:none;display:block;width:680px;height:2px;right:-160px;top:120px;transform:rotate(24deg);transform-origin:center;background:linear-gradient(90deg,transparent 0%,rgba(210,165,83,.12) 13%,rgba(224,174,82,.65) 34%,#f1d398 49%,#d6a145 58%,rgba(210,165,83,.2) 82%,transparent 100%);box-shadow:0 0 6px 1px rgba(232,186,98,.45),0 0 22px 4px rgba(210,165,83,.16);border-radius:50%}
+.hero::before{left:-190px;right:auto;top:370px;width:560px;transform:rotate(-20deg)}
+.essence::after{left:-170px;right:auto;top:68px;width:570px;transform:rotate(-18deg)}
+.studies::after{right:-170px;top:105px;width:660px;transform:rotate(22deg)}
+.direction::after{left:-180px;right:auto;top:72%;width:570px;transform:rotate(-24deg)}
+.site-footer::after{right:-170px;top:48px;width:500px;transform:rotate(-16deg)}
+@media(max-width:640px){
+ .hero::before,.hero::after,.essence::after,.studies::after,.direction::after,.site-footer::after,.solutions::after,.process::after,.contact::after,.faq::after{width:370px;height:1.5px;right:-155px;top:94px;box-shadow:0 0 5px 1px rgba(232,186,98,.5),0 0 18px 3px rgba(210,165,83,.19)}
+ .hero::before{left:-190px;right:auto;top:360px;width:350px;transform:rotate(-22deg)}
+ .essence::after{left:-185px;right:auto;top:56px;transform:rotate(-18deg)}
+ .studies::after{right:-155px;top:122px;transform:rotate(24deg)}
+ .direction::after{left:-180px;right:auto;top:72%;transform:rotate(-24deg)}
+ .site-footer::after{right:-170px;top:48px;transform:rotate(-16deg)}
+}
+
+/* Match the formerly light sections to the existing black and gold backgrounds. */
+.solutions{background-image:radial-gradient(ellipse 650px 500px at 100% 14%,rgba(210,165,83,.28),rgba(210,165,83,.07) 46%,transparent 78%)}
+.process{background-image:radial-gradient(ellipse 620px 470px at 0% 72%,rgba(210,165,83,.26),transparent 78%)}
+.contact{background-image:radial-gradient(ellipse 650px 530px at 0% 30%,rgba(210,165,83,.27),transparent 79%)}
+.faq{background-image:radial-gradient(ellipse 600px 420px at 100% 72%,rgba(210,165,83,.24),transparent 78%)}
+.process::before,.contact::before{left:-290px;right:auto;top:25%}
+.solutions::after{right:-190px;top:84px;transform:rotate(20deg)}
+.process::after{left:-190px;right:auto;top:78%;transform:rotate(-20deg)}
+.contact::after{left:-200px;right:auto;top:105px;transform:rotate(-22deg)}
+.faq::after{right:-180px;top:70%;transform:rotate(20deg)}
+@media(max-width:640px){.solutions{background-image:radial-gradient(ellipse 420px 510px at 100% 16%,rgba(210,165,83,.28),transparent 79%)}.process{background-image:radial-gradient(ellipse 410px 540px at 0% 70%,rgba(210,165,83,.26),transparent 79%)}.contact{background-image:radial-gradient(ellipse 410px 500px at 0% 24%,rgba(210,165,83,.27),transparent 79%)}.faq{background-image:radial-gradient(ellipse 400px 450px at 100% 72%,rgba(210,165,83,.24),transparent 79%)}.process::before,.contact::before{left:-225px;right:auto}.solutions::after{right:-160px;top:90px}.process::after{left:-190px;right:auto;top:78%}.contact::after{left:-190px;right:auto;top:110px}.faq::after{right:-160px;top:72%}}
