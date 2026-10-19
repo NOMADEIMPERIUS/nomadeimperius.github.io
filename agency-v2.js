@@ -18,6 +18,9 @@
   document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
   matchMedia('(min-width:761px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
   const films = $$('.film-screen video');
+  const openingVideo = $('#opening-video');
+  const startOpeningVideo = () => { if (openingVideo) { openingVideo.muted = true; openingVideo.play().catch(() => {}); } };
+  startOpeningVideo();
   document.addEventListener('visibilitychange', () => { if (document.hidden) films.forEach(video => video.pause()); });
   let ticking = false;
   const progress = () => { const max = document.documentElement.scrollHeight - innerHeight; document.documentElement.style.setProperty('--reading', `${max > 0 ? Math.min(100, scrollY / max * 100) : 0}%`); ticking = false; };
