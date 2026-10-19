@@ -19,3 +19,5 @@ dialog{width:min(640px,calc(100% - 32px));max-height:calc(100dvh - 40px);padding
 
 /* Filme da marca no início da página */
 .opening-film{background:#050605;border-top:0;padding:0}.opening-film>.wrap{width:100%;max-width:1600px}.opening-film .film-grid.single-film{max-width:none}.opening-film .film-screen{border:0}.opening-film .film-screen video{display:block;width:100%;max-height:82svh;aspect-ratio:16/9;object-fit:contain;background:#050605}.opening-film .film-meta{margin-inline:clamp(20px,4vw,64px);padding-block:16px}.opening-film .film-meta h3{font-size:18px}.opening-film .transcript,.opening-film .film-note{display:none}@media(max-width:760px){.opening-film .film-screen video{max-height:none;aspect-ratio:16/9}.opening-film .film-meta h3{font-size:16px}.opening-film .film-meta span{font-size:8px}}
+
+.opening-film .film-screen video{max-height:calc(100svh - 170px)}@media(max-width:760px){.opening-film .film-screen video{max-height:none}}
